@@ -42,6 +42,9 @@ export default {
     '@nuxtjs/tailwindcss',
     // https://github.com/nuxt-community/svg-sprite-module
     '@nuxtjs/svg-sprite',
+    '@nuxtjs/dotenv',
+    // https://github.com/nuxt-community/google-fonts-module
+    '@nuxtjs/google-fonts',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -52,7 +55,7 @@ export default {
     [
       'storyblok-nuxt',
       {
-        accessToken: 'vg9dcj1OzcTrzu5lBVtCCAtt',
+        accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
         cacheProvider: 'memory',
       },
     ],
@@ -76,5 +79,16 @@ export default {
   tailwindcss: {
     // add '~tailwind.config` alias
     exposeConfig: true,
+    jit: true,
   },
-}
+
+  googleFonts: {
+    families: {
+      Questrial: [400],
+      Solway: [300, 400, 500, 700, 800],
+    },
+    display: 'swap',
+    preconnect: true,
+    preload: true,
+  },
+};

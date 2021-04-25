@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 // tailwind.config.js
 module.exports = {
   purge: [
@@ -16,6 +18,10 @@ module.exports = {
       lg: '1024px',
       xl: '1280px',
     },
+    fontFamily: {
+      sans: ['Questrial', ...defaultTheme.fontFamily.sans],
+      heading: ['Solway', 'serif'],
+    },
     extend: {
       colors: {
         primary: 'var(--color-primary)',
@@ -30,4 +36,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+};
